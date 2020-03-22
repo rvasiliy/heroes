@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of heroes
+ */
+export * from './lib/heroes-detail/heroes-detail.component';
+export * from './lib/heroes-list/heroes-list.component';
+export * from './lib/heroes.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BydmFzaWxpeS9oZXJvZXMvIiwic291cmNlcyI6WyJwdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyw2Q0FBNkMsQ0FBQztBQUM1RCxjQUFjLHlDQUF5QyxDQUFDO0FBQ3hELGNBQWMscUJBQXFCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogUHVibGljIEFQSSBTdXJmYWNlIG9mIGhlcm9lc1xuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL2hlcm9lcy1kZXRhaWwvaGVyb2VzLWRldGFpbC5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvaGVyb2VzLWxpc3QvaGVyb2VzLWxpc3QuY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL2hlcm9lcy5tb2R1bGUnO1xuIl19

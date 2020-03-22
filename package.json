@@ -1,0 +1,21 @@
+{
+  "name": "@rvasiliy/heroes",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^9.0.7",
+    "@angular/core": "^9.0.7",
+    "tslib": "^1.10.0"
+  },
+  "main": "bundles/rvasiliy-heroes.umd.js",
+  "module": "fesm5/rvasiliy-heroes.js",
+  "es2015": "fesm2015/rvasiliy-heroes.js",
+  "esm5": "esm5/rvasiliy-heroes.js",
+  "esm2015": "esm2015/rvasiliy-heroes.js",
+  "fesm5": "fesm5/rvasiliy-heroes.js",
+  "fesm2015": "fesm2015/rvasiliy-heroes.js",
+  "typings": "rvasiliy-heroes.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
+  }
+}
