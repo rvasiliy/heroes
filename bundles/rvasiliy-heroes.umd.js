@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/router'), require('@angular/common')) :
-    typeof define === 'function' && define.amd ? define('@rvasiliy/heroes', ['exports', '@angular/core', '@angular/router', '@angular/common'], factory) :
-    (global = global || self, factory((global.rvasiliy = global.rvasiliy || {}, global.rvasiliy.heroes = {}), global.ng.core, global.ng.router, global.ng.common));
-}(this, (function (exports, core, router, common) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@angular/router')) :
+    typeof define === 'function' && define.amd ? define('@rvasiliy/heroes', ['exports', '@angular/core', '@angular/common', '@angular/router'], factory) :
+    (global = global || self, factory((global.rvasiliy = global.rvasiliy || {}, global.rvasiliy.heroes = {}), global.ng.core, global.ng.common, global.ng.router));
+}(this, (function (exports, core, common, router) { 'use strict';
 
     var HeroesDetailComponent = /** @class */ (function () {
         function HeroesDetailComponent() {
@@ -10,10 +10,20 @@
         HeroesDetailComponent.prototype.ngOnInit = function () {
         };
         HeroesDetailComponent.ɵfac = function HeroesDetailComponent_Factory(t) { return new (t || HeroesDetailComponent)(); };
-        HeroesDetailComponent.ɵcmp = core["ɵɵdefineComponent"]({ type: HeroesDetailComponent, selectors: [["hero-heroes-detail"]], decls: 2, vars: 0, template: function HeroesDetailComponent_Template(rf, ctx) { if (rf & 1) {
-                core["ɵɵelementStart"](0, "p");
-                core["ɵɵtext"](1, "heroes-detail works!");
+        HeroesDetailComponent.ɵcmp = core["ɵɵdefineComponent"]({ type: HeroesDetailComponent, selectors: [["hero-heroes-detail"]], inputs: { hero: "hero" }, decls: 5, vars: 2, template: function HeroesDetailComponent_Template(rf, ctx) { if (rf & 1) {
+                core["ɵɵelementStart"](0, "div");
+                core["ɵɵelementStart"](1, "p");
+                core["ɵɵtext"](2);
                 core["ɵɵelementEnd"]();
+                core["ɵɵelementStart"](3, "p");
+                core["ɵɵtext"](4);
+                core["ɵɵelementEnd"]();
+                core["ɵɵelementEnd"]();
+            } if (rf & 2) {
+                core["ɵɵadvance"](2);
+                core["ɵɵtextInterpolate1"]("Id: ", ctx.hero.id, "");
+                core["ɵɵadvance"](2);
+                core["ɵɵtextInterpolate1"]("Name: ", ctx.hero.name, "");
             } }, styles: [""] });
         return HeroesDetailComponent;
     }());
@@ -24,19 +34,39 @@
                     templateUrl: './heroes-detail.component.html',
                     styleUrls: ['./heroes-detail.component.css']
                 }]
-        }], function () { return []; }, null); })();
+        }], function () { return []; }, { hero: [{
+                type: core.Input
+            }] }); })();
 
+    var _c0 = function (a1) { return ["detail", a1]; };
+    function HeroesListComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+        core["ɵɵelementStart"](0, "div");
+        core["ɵɵelementStart"](1, "span");
+        core["ɵɵtext"](2);
+        core["ɵɵelementEnd"]();
+        core["ɵɵtext"](3, " | ");
+        core["ɵɵelementStart"](4, "a", 1);
+        core["ɵɵtext"](5, "Detail");
+        core["ɵɵelementEnd"]();
+        core["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        var hero_r3 = ctx.$implicit;
+        core["ɵɵadvance"](2);
+        core["ɵɵtextInterpolate"](hero_r3.name);
+        core["ɵɵadvance"](2);
+        core["ɵɵproperty"]("routerLink", core["ɵɵpureFunction1"](2, _c0, hero_r3.id));
+    } }
     var HeroesListComponent = /** @class */ (function () {
         function HeroesListComponent() {
         }
         HeroesListComponent.prototype.ngOnInit = function () {
         };
         HeroesListComponent.ɵfac = function HeroesListComponent_Factory(t) { return new (t || HeroesListComponent)(); };
-        HeroesListComponent.ɵcmp = core["ɵɵdefineComponent"]({ type: HeroesListComponent, selectors: [["hero-heroes-list"]], decls: 2, vars: 0, template: function HeroesListComponent_Template(rf, ctx) { if (rf & 1) {
-                core["ɵɵelementStart"](0, "p");
-                core["ɵɵtext"](1, "heroes-list works!");
-                core["ɵɵelementEnd"]();
-            } }, styles: [""] });
+        HeroesListComponent.ɵcmp = core["ɵɵdefineComponent"]({ type: HeroesListComponent, selectors: [["hero-heroes-list"]], inputs: { list: "list" }, decls: 1, vars: 1, consts: [[4, "ngFor", "ngForOf"], [3, "routerLink"]], template: function HeroesListComponent_Template(rf, ctx) { if (rf & 1) {
+                core["ɵɵtemplate"](0, HeroesListComponent_div_0_Template, 6, 4, "div", 0);
+            } if (rf & 2) {
+                core["ɵɵproperty"]("ngForOf", ctx.list);
+            } }, directives: [common.NgForOf, router.RouterLinkWithHref], styles: [""] });
         return HeroesListComponent;
     }());
     /*@__PURE__*/ (function () { core["ɵsetClassMetadata"](HeroesListComponent, [{
@@ -46,7 +76,15 @@
                     templateUrl: './heroes-list.component.html',
                     styleUrls: ['./heroes-list.component.css']
                 }]
-        }], function () { return []; }, null); })();
+        }], function () { return []; }, { list: [{
+                type: core.Input
+            }] }); })();
+
+    var Hero = /** @class */ (function () {
+        function Hero() {
+        }
+        return Hero;
+    }());
 
     var HeroesService = /** @class */ (function () {
         function HeroesService() {
@@ -90,9 +128,11 @@
                 }]
         }], null, null); })();
 
+    exports.Hero = Hero;
     exports.HeroesDetailComponent = HeroesDetailComponent;
     exports.HeroesListComponent = HeroesListComponent;
     exports.HeroesModule = HeroesModule;
+    exports.HeroesService = HeroesService;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
